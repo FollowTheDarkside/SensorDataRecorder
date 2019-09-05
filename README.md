@@ -1,8 +1,8 @@
 # Sensor Data Recorder
 This is a simple iOS app for recording iPhone motion data as a CSV file. <br>
 By the way, it was created to collect data for machine learning...
-![IMG_1293](https://user-images.githubusercontent.com/9309605/64344143-d73ed800-d028-11e9-9cd7-bfafa9fa6f6d.PNG)
-![IMG_1294](https://user-images.githubusercontent.com/9309605/64344302-284ecc00-d029-11e9-9291-b76bec8fd2be.PNG)
+<img src="***https://user-images.githubusercontent.com/9309605/64344143-d73ed800-d028-11e9-9cd7-bfafa9fa6f6d.PNG***" width="***320px***">
+<img src="***https://user-images.githubusercontent.com/9309605/64344302-284ecc00-d029-11e9-9291-b76bec8fd2be.PNG***" width="***320px***">
 ## Description
 This app records the motion data obtained from [CMDeviceMotion](https://developer.apple.com/documentation/coremotion/cmdevicemotion). See link for details. <br>
 Specifically, the following items are recorded.
