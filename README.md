@@ -2,7 +2,7 @@
 This is a simple iOS app for recording iPhone motion data as a CSV file. <br>
 By the way, it was created to collect data for machine learning...
 ## Description
-This app records the motion data obtained from [CMDeviceMotion](https://developer.apple.com/documentation/coremotion/cmdevicemotion). See link for details.
+This app records the motion data obtained from [CMDeviceMotion](https://developer.apple.com/documentation/coremotion/cmdevicemotion). See link for details. <br>
 Specifically, the following items are recorded.
 
 * Attitude
@@ -23,7 +23,7 @@ Please note that this is different from the data obtained from [CMGyroData](http
 5. Save the CSV file with a name.
 
 See also [here](https://developer.apple.com/documentation/coremotion/cmmotionmanager/1616065-devicemotionupdateinterval) for data recording intervals. <br> 
-You can check the recorded CSV file in the window opened from the CSV button. You can also delete CSV files by swiping cells or operating buttons. <br>
+You can check the recorded CSV file in the window opened from the CSV button. You can also delete CSV files by swiping cells or operating buttons.
 Use iTunes file sharing to move CSV files to your PC.
 ## License
 MIT
