@@ -1,6 +1,6 @@
 # Sensor Data Recorder
 This is a simple iOS app for recording iPhone motion data as a CSV file. <br>
-By the way, it was created to collect data for machine learning...
+By the way, it was created to collect data for machine learning... <br>
 <img src="https://user-images.githubusercontent.com/9309605/64344143-d73ed800-d028-11e9-9cd7-bfafa9fa6f6d.PNG" width="320px">
 <img src="https://user-images.githubusercontent.com/9309605/64344302-284ecc00-d029-11e9-9291-b76bec8fd2be.PNG" width="320px">
 ## Description
