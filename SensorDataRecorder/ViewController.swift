@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion
 import simd
+import CoreML
 
 class ViewController: UIViewController {
     
@@ -27,6 +28,10 @@ class ViewController: UIViewController {
     
     var format = DateFormatter()
     let csvManager = SensorDataCsvManager()
+    
+    let inputDataLength = 50
+    var compAccArray = [Double]()
+    var classLabel = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -232,6 +237,24 @@ class ViewController: UIViewController {
         let compData = sqrt((sensorData.x * sensorData.x) + (sensorData.y * sensorData.y) + (sensorData.z * sensorData.z))
         
         return compData
+    }
+    
+    func getCoremlOutput(){
+        // store sensor data in array for CoreML model
+        let dataNum = NSNumber(value:inputDataLength)
+        let mlarray = try! MLMultiArray(shape: [dataNum], dataType: MLMultiArrayDataType.double )
+        
+        for (index, data) in compAccArray.enumerated(){
+            mlarray[index] = data as NSNumber
+        }
+        
+        // input data to CoreML model
+        let model = iPhoneModel()
+        guard let output = try? model.prediction(input:
+            iPhoneModelInput(input1: mlarray)) else {
+                fatalError("Unexpected runtime error.")
+        }
+        classLabel = output.classLabel
     }
 }
 
