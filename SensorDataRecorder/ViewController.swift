@@ -227,5 +227,11 @@ class ViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    func getCompositeData(sensorData:inout SIMD3<Double>) -> Double{
+        let compData = sqrt((sensorData.x * sensorData.x) + (sensorData.y * sensorData.y) + (sensorData.z * sensorData.z))
+        
+        return compData
+    }
 }
 
