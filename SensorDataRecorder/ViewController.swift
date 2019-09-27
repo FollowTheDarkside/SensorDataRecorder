@@ -131,6 +131,13 @@ class ViewController: UIViewController {
         
         displaySensorData()
         
+       // add data for input CoreML
+        compAccArray.append(getCompositeData(sensorData: &acc))
+        if compAccArray.count >= inputDataLength {
+            getCoremlOutput()
+            compAccArray.removeAll()
+        }
+        
         // record sensor data
         if csvManager.isRecording {
             format.dateFormat = "MMddHHmmssSSS"
@@ -177,6 +184,8 @@ class ViewController: UIViewController {
         text += "X: " + String(format:"%06f", acc.x) + "\n"
         text += "Y: " + String(format:"%06f", acc.y) + "\n"
         text += "Z: " + String(format:"%06f", acc.z) + "\n"
+        
+        text += "Label: " + classLabel
         
         sensorDataInfoTextView.text = text
     }
