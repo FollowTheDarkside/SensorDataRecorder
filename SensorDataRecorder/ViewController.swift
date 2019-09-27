@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sensorIntervalSlider: UISlider!
     @IBOutlet weak var recordCsvButton: CustomButton!
     @IBOutlet weak var csvFileManagementButton: CustomButton!
+    @IBOutlet weak var modelPredictionSwitch: UISwitch!
     
     let motionManager = CMMotionManager()
     var attitude = SIMD3<Double>.zero
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     let inputDataLength = 50
     var compAccArray = [Double]()
     var classLabel = ""
+    var predictionCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +87,14 @@ class ViewController: UIViewController {
         self.present(csvFileManagementViewController, animated: true, completion: nil)
     }
     
+    @IBAction func modelPredictionSwitchAction(_ sender: UISwitch) {
+        if sender.isOn {
+            // reset model output data
+            sensorDataInfoTextView.text = ""
+            predictionCount = 0
+        }
+    }
+    
     func startSensorUpdates(intervalSeconds:Double) {
         if motionManager.isDeviceMotionAvailable{
             motionManager.deviceMotionUpdateInterval = intervalSeconds
@@ -130,13 +140,15 @@ class ViewController: UIViewController {
         acc.y = deviceMotion.userAcceleration.y
         acc.z = deviceMotion.userAcceleration.z
         
-        displaySensorData()
-        
-       // add data for input CoreML
-        compAccArray.append(getCompositeData(sensorData: &acc))
-        if compAccArray.count >= inputDataLength {
-            getCoremlOutput()
-            compAccArray.removeAll()
+        if modelPredictionSwitch.isOn{
+            // add data for input CoreML
+            compAccArray.append(getCompositeData(sensorData: &acc))
+            if compAccArray.count >= inputDataLength {
+                getCoremlOutput()
+                compAccArray.removeAll()
+            }
+        }else{
+            displaySensorData()
         }
         
         // record sensor data
@@ -186,9 +198,13 @@ class ViewController: UIViewController {
         text += "Y: " + String(format:"%06f", acc.y) + "\n"
         text += "Z: " + String(format:"%06f", acc.z) + "\n"
         
-        text += "Label: " + classLabel
-        
         sensorDataInfoTextView.text = text
+    }
+    
+    func displayModelOutput(){
+        let text = String(format: "%3d",predictionCount) + ": " + classLabel + "\n"
+        
+        sensorDataInfoTextView.text += text
     }
     
     func showSaveCsvFileAlert(fileName:String){
@@ -265,6 +281,9 @@ class ViewController: UIViewController {
                 fatalError("Unexpected runtime error.")
         }
         classLabel = output.classLabel
+        predictionCount += 1
+        
+        displayModelOutput()
     }
 }
 
