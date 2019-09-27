@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sensorDataInfoTextView.font = UIFont.monospacedDigitSystemFont(ofSize: 14, weight: .regular)
         startSensorUpdates(intervalSeconds: 0.02) // 50Hz
     }
     
