@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B4A1491233DFCF700BE8BBA /* iPhoneModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1B4A1490233DFCF700BE8BBA /* iPhoneModel.mlmodel */; };
+		1B4A14932340978800BE8BBA /* iPhoneModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1B4A14922340978700BE8BBA /* iPhoneModel.mlmodel */; };
 		1BBC0195231D13DF002DC27D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC0194231D13DF002DC27D /* AppDelegate.swift */; };
 		1BBC0197231D13DF002DC27D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC0196231D13DF002DC27D /* ViewController.swift */; };
 		1BBC019A231D13E0002DC27D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBC0198231D13E0002DC27D /* Main.storyboard */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B4A1490233DFCF700BE8BBA /* iPhoneModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = iPhoneModel.mlmodel; sourceTree = "<group>"; };
+		1B4A14922340978700BE8BBA /* iPhoneModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = iPhoneModel.mlmodel; sourceTree = "<group>"; };
 		1BBC0191231D13DF002DC27D /* SensorDataRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorDataRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BBC0194231D13DF002DC27D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BBC0196231D13DF002DC27D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 				1BBC0198231D13E0002DC27D /* Main.storyboard */,
 				1BBC01AE231FECD8002DC27D /* CsvFileManagementViewController.swift */,
 				1BBC01AC231EDFE2002DC27D /* SensorDataCsvManager.swift */,
-				1B4A1490233DFCF700BE8BBA /* iPhoneModel.mlmodel */,
+				1B4A14922340978700BE8BBA /* iPhoneModel.mlmodel */,
 				1BBC019B231D13E2002DC27D /* Assets.xcassets */,
 				1BBC019D231D13E2002DC27D /* LaunchScreen.storyboard */,
 				1BBC01A0231D13E2002DC27D /* Info.plist */,
@@ -156,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BBC01AD231EDFE2002DC27D /* SensorDataCsvManager.swift in Sources */,
-				1B4A1491233DFCF700BE8BBA /* iPhoneModel.mlmodel in Sources */,
+				1B4A14932340978800BE8BBA /* iPhoneModel.mlmodel in Sources */,
 				1BBC0197231D13DF002DC27D /* ViewController.swift in Sources */,
 				1BBC0195231D13DF002DC27D /* AppDelegate.swift in Sources */,
 				1BBC01AB231E6A7B002DC27D /* CustomButton.swift in Sources */,
