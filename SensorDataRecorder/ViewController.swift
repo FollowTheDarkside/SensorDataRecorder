@@ -72,11 +72,22 @@ class ViewController: UIViewController {
             csvFileManagementButton.isEnabled = true
             recordCsvButton.setTitle("START", for: .normal)
         }else{
-            csvManager.startRecording()
+            // Button animation & Wait 3 sec before starting recording
+            UIView.animate(withDuration: 3.0,
+                           delay: 0.0,
+                           options: [.curveLinear],
+                           animations: {
+                            self.recordCsvButton.backgroundColor = UIColor.white
+                            self.recordCsvButton.setTitle("WAIT...", for: .normal)
+            }, completion: { (finished: Bool) in
+                self.csvManager.startRecording()
+                self.recordCsvButton.setTitle("STOP", for: .normal)
+                self.recordCsvButton.backgroundColor = UIColor.clear
+            })
             
             sensorIntervalSlider.isEnabled = false
             csvFileManagementButton.isEnabled = false
-            recordCsvButton.setTitle("STOP", for: .normal)
+            //recordCsvButton.setTitle("STOP", for: .normal)
         }
     }
     
